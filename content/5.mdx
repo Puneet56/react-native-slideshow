@@ -1,0 +1,58 @@
+## React vs React Native
+
+#### Same concepts, different building blocks
+
+<table>
+<tr>
+<th>React</th>
+<th>React Native</th>
+</tr>
+<tr>
+<td>
+
+```javascript
+import { useState } from "react";
+
+const App = () => {
+	const [counter, setCounter] = useState(0);
+
+	return (
+		<div>
+			<h1>{counter}</h1>
+			<button 
+				onClick={() => setCounter(counter + 1)}
+			>
+				Increment
+			</button>
+		</div>
+	);
+};
+
+export default App;
+```
+
+</td>
+<td>
+
+```javascript
+import { useState } from "react";
+import { Button, Text, View } from "react-native";
+
+const App = () => {
+	const [counter, setCounter] = useState(0);
+
+	return (
+		<View>
+			<Text>{counter}</Text>
+			<Button 
+				onPress={() => setCounter(counter + 1)}
+				title="Increment" 
+			/>
+		</View>
+	);
+};
+```
+
+</td>
+</tr>
+</table>
