@@ -19,26 +19,24 @@ export default function TestPage({ slides }: { slides: any }) {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [transitionClass, setTransitionClass] = useState("");
 
-	console.log(slides);
-
 	useEffect(() => {
 		let listner = (e: KeyboardEvent) => {
 			if (e.key === "ArrowRight") {
 				setCurrentSlide((prev) => {
 					if (prev === slides.length - 1) return prev;
 
-					setTransitionClass("right-to-left");
 					return prev + 1;
 				});
+				setTransitionClass("right-to-left");
 			}
 
 			if (e.key === "ArrowLeft") {
 				setCurrentSlide((prev) => {
 					if (prev === 0) return prev;
 
-					setTransitionClass("left-to-right");
 					return prev - 1;
 				});
+				setTransitionClass("left-to-right");
 			}
 		};
 
@@ -78,7 +76,7 @@ export default function TestPage({ slides }: { slides: any }) {
 					);
 				})}
 
-				<div className="absolute bottom-4 left-4">{currentSlide}</div>
+				<div className="fixed bottom-4 left-4">{currentSlide}</div>
 			</div>
 		</>
 	);

@@ -3,23 +3,29 @@
 @tailwind utilities;
 
 .right-to-left {
-	animation: right-to-left 0.2s linear;
+	transform: translate(40%);
+	animation: right-to-left 0.5s linear;
+}
+
+.left-to-right {
+	transform: translate(-40%);
+	animation: left-to-right 0.5s linear;
 }
 
 @keyframes left-to-right {
 	0% {
-		transform: translateX(-20%);
 		opacity: 0;
+		transform: translateX(-40%);
 	}
 	100% {
-		transform: translateX(0);
 		opacity: 1;
+		transform: translateX(0);
 	}
 }
 
 @keyframes right-to-left {
 	0% {
-		transform: translateX(20%);
+		transform: translateX(40%);
 		opacity: 0;
 	}
 	100% {

@@ -1,16 +1,25 @@
-const index = () => {
+import { StyleSheet, Text, View } from "react-native";
+
+const App = () => {
 	return (
-		<html>
-			<body>
-				<div>
-					<h2>Test</h2>
-					<button>Click me</button>
-					<input type="text" />
-					Hello
-				</div>
-			</body>
-		</html>
+		<View styles={styles.container}>
+			<Text
+				style={{
+					margin: 4,
+					padding: 4,
+				}}
+			>
+				App
+			</Text>
+		</View>
 	);
 };
 
-export default index;
+export default App;
+
+const styles = StyleSheet.create({
+	container: {
+		alignItems: "center",
+		justifyContent: "center",
+	},
+});
